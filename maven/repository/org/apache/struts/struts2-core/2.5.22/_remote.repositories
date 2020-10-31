@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Oct 13 23:22:14 CST 2020
+struts2-core-2.5.22-sources.jar>central=
+struts2-core-2.5.22.jar>central=
+struts2-core-2.5.22.pom>central=
