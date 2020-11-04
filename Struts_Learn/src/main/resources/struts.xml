@@ -11,7 +11,17 @@
         </action>
 		
         <action name="hello" class="helloworld.action.HelloWorldAction" method="execute">
-            <result name="success">/HelloWorld.jsp</result>
+            <result name="success">/helloword.jsp</result>
         </action>
+        <action name="register" class="strutsLearn.action.RegisterAction" method="register">
+        	<result name="register">/thankyou.jsp</result>
+        	<result name="input">/register.jsp</result>
+        </action>
+        
+        <action name="welcome_*" class="strutsLearn.action.RegisterAction" method="{1}">
+	        <result name="{1}">/{1}.jsp</result>
+    	    <allowed-methods>register</allowed-methods>
+        </action>
+        
     </package>
 </struts>
