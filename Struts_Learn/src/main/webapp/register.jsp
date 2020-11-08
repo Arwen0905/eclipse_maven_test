@@ -11,9 +11,9 @@
 <body>
 	<s:form action="register">
 		<s:select list="#{1:1,2:2,3:3}"/>
-		<s:textfield name="person.account" label="account" value="阿文"/>
-		<s:textfield name="person.password" label="password" value="123"/>
-		<s:textfield name="person.email" label="email" value="QQ@gmail.com"/>
+		<s:textfield name="person.account" label="account" value=""/>
+		<s:textfield name="person.password" label="password" value=""/>
+		<s:textfield name="person.email" label="email" value=""/>
 		<s:submit label="Click"/>
 	</s:form>
 </body>

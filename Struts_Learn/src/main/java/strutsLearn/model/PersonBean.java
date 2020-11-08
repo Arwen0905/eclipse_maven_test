@@ -30,8 +30,9 @@ public class PersonBean {
 	}
 	
 	public String toString() {
-		return "帳戶" + getAccount() + "密碼" + getPassword() 
-		+ "信箱" + getEmail();
+		return "帳戶：" + getAccount() 
+			 + "密碼：" + getPassword() 
+			 + "信箱：" + getEmail();
 	}
 
 }

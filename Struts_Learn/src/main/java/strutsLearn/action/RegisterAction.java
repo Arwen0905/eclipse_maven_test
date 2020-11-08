@@ -7,7 +7,7 @@ public class RegisterAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
 	
-	private PersonBean person = new PersonBean();
+	private PersonBean person;
 	
 	public String register() throws Exception {
 		return "register";
@@ -20,17 +20,19 @@ public class RegisterAction extends ActionSupport {
 	public void setPerson(PersonBean person) {
 		this.person = person;
 	}
-	
 //	validation
 	public void validate() {
-//		if(person.getAccount().length() == 0) {
-//			addFieldError("person.account","QQQ");
-//		}
-//		if(person.getPassword().length() == 0) {			
-//			addFieldError("person.password","QQQ");
-//		}
-//		if(person.getEmail().length() == 0) {
-//			addFieldError("person.email", "QQQ");
-//		}
+		try {
+			if (person.getAccount().length() == 0) {
+				addFieldError("person.account", "validate stop! account");
+			}
+			if(person.getPassword().length() == 0) {			
+				addFieldError("person.password","validate stop! password");
+			}
+			if(person.getEmail().length() == 0) {
+				addFieldError("person.email", "validate stop! email");
+			}
+		} catch (Exception e) {
+		}
 	}
 }

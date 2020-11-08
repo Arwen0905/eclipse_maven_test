@@ -11,5 +11,6 @@
 	<h1>Welcome Register!</h1>
 	<p>your information</p>
 	<p><s:property value="person"/></p>
+	<p><a type="buttom" href="<s:url action='index'/>" />return to HOME page</p>
 </body>
 </html>
