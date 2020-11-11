@@ -10,7 +10,7 @@
 </head>
 <body>
 	<s:form action="register">
-		<s:select list="#{1:1,2:2,3:3}"/>
+		<s:select list="#{1:'基隆關',2:'台北關',3:'高雄關'}"/>
 		<s:textfield name="person.account" label="account" value=""/>
 		<s:textfield name="person.password" label="password" value=""/>
 		<s:textfield name="person.email" label="email" value=""/>
