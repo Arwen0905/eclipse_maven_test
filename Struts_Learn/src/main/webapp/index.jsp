@@ -10,5 +10,6 @@
         <h1>Welcome To Struts 2!</h1>
         <p><a href="<s:url action='hello'/>">Hello World</a></p>
         <p><a href="<s:url action='welcome_register'/>">Welcome Register</a></p>
+        <s:action name="welcome_register" executeResult="true"/>
     </body>
 </html>
