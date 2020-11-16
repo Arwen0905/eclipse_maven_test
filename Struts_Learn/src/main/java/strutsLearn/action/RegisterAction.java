@@ -27,7 +27,7 @@ public class RegisterAction extends ActionSupport {
 	
 	private List bfCustCdList;
 	private String qcustCd;
-	public RegisterService rService = new RegisterService();
+	private RegisterService rService = new RegisterService();
 	
 public List getBfCustCdList() {
 	List list = new ArrayList();
