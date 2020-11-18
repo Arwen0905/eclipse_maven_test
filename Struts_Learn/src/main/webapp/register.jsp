@@ -10,6 +10,7 @@
 </head>
 <body>
 	<s:form action="register">
+	<s:checkbox name="checkMe" fieldValue="true" value="true" label="Check Me for testing"/>
 		<s:select 
 			id="customs"
 			name="qcustCd"
@@ -18,9 +19,9 @@
 			headerValue="請選擇"
 			cssStyle="width:180px"
 			/>
-		<s:textfield name="person.account" label="account" value=""/>
-		<s:textfield name="person.password" label="password" value=""/>
-		<s:textfield name="person.email" label="email" value=""/>
+		<s:textfield name="person.account" label="account" value="測試員001"/>
+		<s:textfield name="person.password" label="password" value="root"/>
+		<s:textfield name="person.email" label="email" value="Test001@gmail.com"/>
 		<s:submit label="Click"/>
 	</s:form>
 </body>

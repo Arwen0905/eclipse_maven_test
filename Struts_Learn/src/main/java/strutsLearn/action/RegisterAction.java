@@ -11,7 +11,16 @@ public class RegisterAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	
 	private PersonBean person;
-	
+	private boolean checkMe;
+
+	public boolean isCheckMe() {
+		return checkMe;
+	}
+
+	public void setCheckMe(boolean checkMe) {
+		this.checkMe = checkMe;
+	}
+
 	public String register() throws Exception {
 		return "register";
 	}
