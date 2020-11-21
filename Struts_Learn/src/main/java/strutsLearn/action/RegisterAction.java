@@ -1,6 +1,5 @@
 package strutsLearn.action;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -12,6 +11,17 @@ public class RegisterAction extends ActionSupport {
 	
 	private PersonBean person;
 	private boolean checkMe;
+	private RegisterService rService = new RegisterService();
+	private String comeDB;
+	private RegisterService queryMM = new RegisterService();
+	
+	public String getComeDB() {
+		return comeDB;
+	}
+
+	public void setComeDB(String comeDB) {
+		this.comeDB = comeDB;
+	}
 
 	public boolean isCheckMe() {
 		return checkMe;
@@ -35,15 +45,9 @@ public class RegisterAction extends ActionSupport {
 	
 	
 	private List bfCustCdList;
-	private String qcustCd;
-	private RegisterService rService = new RegisterService();
 	
-public List getBfCustCdList() {
-	List list = new ArrayList();
-	if(qcustCd==null) {
+	public List getBfCustCdList() {
 		bfCustCdList = rService.queryDBMM();
-		System.out.println(bfCustCdList + " Requestttttttttttttttttttttttttt");
-	}
 		return bfCustCdList;
 	}
 

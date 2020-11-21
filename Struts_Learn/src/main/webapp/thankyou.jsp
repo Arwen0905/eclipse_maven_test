@@ -12,6 +12,7 @@
 	<p>your information</p>
 	<p><s:property value="person"/></p>
 	<h1><s:property value="checkMe"/></h1>
+	<h1><s:property value="comeDB"/></h1>
 	<p><a type="buttom" href="<s:url action='index'/>" />return to HOME page</p>
 </body>
 </html>
