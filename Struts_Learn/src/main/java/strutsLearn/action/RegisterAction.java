@@ -12,15 +12,11 @@ public class RegisterAction extends ActionSupport {
 	private PersonBean person;
 	private boolean checkMe;
 	private RegisterService rService = new RegisterService();
-	private String comeDB;
-	private RegisterService queryMM = new RegisterService();
+	private List bfCustCdList;
 	
-	public String getComeDB() {
-		return comeDB;
-	}
-
-	public void setComeDB(String comeDB) {
-		this.comeDB = comeDB;
+	public String execute() {
+		getBfCustCdList();
+		return SUCCESS;
 	}
 
 	public boolean isCheckMe() {
@@ -44,16 +40,19 @@ public class RegisterAction extends ActionSupport {
 	}
 	
 	
-	private List bfCustCdList;
-	
-	public List getBfCustCdList() {
-		bfCustCdList = rService.queryDBMM();
-		return bfCustCdList;
-	}
-
 	public void setBfCustCdList(List bfCustCdList) {
 		this.bfCustCdList = bfCustCdList;
 	}
+		
+	//取得Service的List資料
+	static int count = 0;
+	public List getBfCustCdList() {
+		count += 1;
+		bfCustCdList = rService.queryDBMM();
+		System.out.println(count + "### count");
+		return bfCustCdList;
+	}
+
 
 	//	validation
 	public void validate() {

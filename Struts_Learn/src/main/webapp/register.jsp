@@ -13,7 +13,7 @@
 	<s:checkbox name="checkMe" fieldValue="true" value="true" label="Check Me for testing"/>
 		<s:select 
 			id="customs"
-			name="qcustCd"
+			name="custCd"
 			list="bfCustCdList"
 			headerKey=""
 			headerValue="請選擇"
