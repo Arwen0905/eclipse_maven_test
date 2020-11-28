@@ -13,28 +13,28 @@ public class RegisterAction extends ActionSupport {
 	private boolean checkMe;
 	private RegisterService rService = new RegisterService();
 	private List bfCustCdList;
+	private List responseDataBase;
+	static int count = 0;
 	
-	public String execute() {
-		getBfCustCdList();
-		return SUCCESS;
-	}
 
 	public boolean isCheckMe() {
 		return checkMe;
 	}
-
 	public void setCheckMe(boolean checkMe) {
 		this.checkMe = checkMe;
 	}
-
+	
 	public String register() throws Exception {
+		System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+		setBfCustCdList(rService.queryList());
+		responseDataBase = rService.queryDBMM();
+		System.out.println(responseDataBase);
 		return "register";
 	}
 	
 	public PersonBean getPerson() {
 		return person;
 	}
-
 	public void setPerson(PersonBean person) {
 		this.person = person;
 	}
@@ -43,13 +43,7 @@ public class RegisterAction extends ActionSupport {
 	public void setBfCustCdList(List bfCustCdList) {
 		this.bfCustCdList = bfCustCdList;
 	}
-		
-	//取得Service的List資料
-	static int count = 0;
 	public List getBfCustCdList() {
-		count += 1;
-		bfCustCdList = rService.queryDBMM();
-		System.out.println(count + "### count");
 		return bfCustCdList;
 	}
 
