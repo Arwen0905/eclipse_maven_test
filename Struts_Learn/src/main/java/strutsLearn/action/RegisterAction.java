@@ -25,7 +25,11 @@ public class RegisterAction extends ActionSupport {
 	}
 	
 	public String register() throws Exception {
-		System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+		System.out.println("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
+		System.out.println("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
+		System.out.println("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
+		System.out.println("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
+		System.out.println("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
 		setBfCustCdList(rService.queryList());
 		responseDataBase = rService.queryDBMM();
 		System.out.println(responseDataBase);

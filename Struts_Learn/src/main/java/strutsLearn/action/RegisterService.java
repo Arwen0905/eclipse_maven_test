@@ -13,52 +13,54 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class RegisterService extends ActionSupport {
 	
-	private List qlist = new ArrayList();
+
+	private static final long serialVersionUID = 1L;
 	
-	public List queryList() {
+	private List<Object> qlist = new ArrayList<Object>();
+	
+	public List<Object> queryList() {
 		for(int i=0; i<10; i++) {
 			qlist.add(i, "資料"+i);
 		}
 		return qlist;
 	}
 	
-	public List queryDBMM() {
+	public List<String> queryDBMM() {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rls = null;
 		
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		ResultSet resultSet = null;
-		List dList = new ArrayList();
+		List<String> dList = new ArrayList<String>();
 		try {
 			
 //			1.加載資料庫驅動
-			Class.forName("com.mysql.jdbc.Driver");
-//			2.創建並獲取資料庫連接
-			connection = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3307/arwen_db?serverTimezone=UTC", "root", "root");
-//			3.設置sql語句
-			String sql = "SELECT * FROM lotto649_2014";
+			Class.forName("com.mysql.cj.jdbc.Driver");
 
-//			設置sql語句中的參數(使用preparedStatement)
-			preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(2, "期別");
-//			通過statement執行sql
-			resultSet = preparedStatement.executeQuery();
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3307/lotto649?serverTimezone=UTC","root","root");
+
+			String sql = "SELECT * FROM lotto649_2014";;
+
+//			連結器執行 陳述語句
+			pstmt = con.prepareStatement(sql);
+//			pstmt.setString(1, "開獎日期");
+			
+//			通過陳述執行sql
+			rls = pstmt.executeQuery();
+			
 //			對sql執行結果進行解析處理
-			System.out.println("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
-			while(resultSet.next()){
-				dList.add("特別號："+resultSet.getString("特別號"));
-				System.out.println(resultSet.getString("特別號"));
+			while(rls.next()){
+				dList.add("特別號："+rls.getString("特別號"));
+				System.out.println(rls.getString("特別號"));
 
 				}
-
 		} catch (Exception e) {
-			System.out.println("資料庫 連結錯誤：" + e);
+			System.out.println("資料庫連線錯誤："+ e);
 		} finally{
 //			釋放資源
-			if(resultSet!=null){
+			if(rls!=null){
 				try {
 					System.out.println("釋放資源");
-					resultSet.close();
+					rls.close();
 				} catch (Exception e) {
 					System.out.println("釋放資源 錯誤");
 					e.printStackTrace();
