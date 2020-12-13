@@ -28,41 +28,39 @@ public class RegisterService extends ActionSupport {
 	public List<String> queryDBMM() {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		ResultSet rls = null;
+		ResultSet rse = null;
+		
+		String db_name = "arwen_db";
+		String code = "AA";
 		
 		List<String> dList = new ArrayList<String>();
 		try {
 			
 //			1.加載資料庫驅動
 			Class.forName("com.mysql.cj.jdbc.Driver");
-
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3307/lotto649?serverTimezone=UTC","root","root");
-
-			String sql = "SELECT * FROM lotto649_2014";;
-
-//			連結器執行 陳述語句
-			pstmt = con.prepareStatement(sql);
-//			pstmt.setString(1, "開獎日期");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3307/"+ db_name +"?serverTimezone=UTC","root","root");
+			pstmt = con.prepareStatement("SELECT * FROM customs_table");
+			
+//			pstmt.setString(1, code);
 			
 //			通過陳述執行sql
-			rls = pstmt.executeQuery();
-			
-//			對sql執行結果進行解析處理
-			while(rls.next()){
-				dList.add("特別號："+rls.getString("特別號"));
-				System.out.println(rls.getString("特別號"));
+			rse = pstmt.executeQuery();
 
+//			對sql執行結果進行解析處理
+			while(rse.next()){
+				dList.add(rse.getString(1)+"："+rse.getString(2)+":"+rse.getString(3));
 				}
+
 		} catch (Exception e) {
 			System.out.println("資料庫連線錯誤："+ e);
 		} finally{
 //			釋放資源
-			if(rls!=null){
+			if(rse!=null){
 				try {
-					System.out.println("釋放資源");
-					rls.close();
+					rse.close();
+					System.out.println("釋 放 資 源： 執行成功");
 				} catch (Exception e) {
-					System.out.println("釋放資源 錯誤");
+					System.out.println("釋 放 資 源：出現錯誤");
 					e.printStackTrace();
 				}
 			}
