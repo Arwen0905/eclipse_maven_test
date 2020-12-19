@@ -19,9 +19,13 @@
         	<result>/thankyou.jsp</result>
         	<result name="input">/register.jsp</result>
         </action>
+		<!--JSON 教學範例-->
+        <action name="JSONExample" class="example.action.JSONExample" method="exampleJson">
+	        <result type="json"/>
+	     </action>
 		<!--樂透資料 回傳JSON-->
         <action name="lottoAction" class="strutsLearn.action.LottoAction" method="lotto">
-        	<result type="json"></result>
+        	<result type="json"/>
         </action>
 		<!--頁面指向共用路徑-->
         <action name="welcome_*" class="strutsLearn.action.RegisterAction" method="{1}">

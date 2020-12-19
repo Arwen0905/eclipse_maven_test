@@ -1,5 +1,5 @@
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=BIG5"
-    pageEncoding="BIG5"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +8,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <style type="text/css">
 *{
-font-family: "·L³n¥¿¶ÂÅé";
-font-family: Arial, Helvetica, sans-serif,'·L³n¥¿¶ÂÅé';
+font-family: "å¾®è»Ÿæ­£é»‘é«”";
+font-family: Arial, Helvetica, sans-serif,'å¾®è»Ÿæ­£é»‘é«”';
 font-size: 24px;
 position: relative;
 }
@@ -74,20 +74,20 @@ margin: 5px;
 <body>
 <div id="wrapper">
 	<div class="lotto649">
-		<h1 id="wen" onclick="javascript:window.location.reload()" title="­«·s¾ã²z">Hello World</h1>
-		<input class="btn" value="©x¤èºô¯¸" type="button" onclick="window.open('https://www.taiwanlottery.com.tw/lotto/lotto649/history.aspx','_blank')" />
-		<a id="url_lotto" href="https://www.taiwanlottery.com.tw/lotto649/index.asp" target="_blank">¹CÀ¸³W«h</a>
+		<h1 id="wen" onclick="javascript:window.location.reload()" title="é‡æ–°æ•´ç†">Hello World</h1>
+		<input class="btn" value="å®˜æ–¹ç¶²ç«™" type="button" onclick="window.open('https://www.taiwanlottery.com.tw/lotto/lotto649/history.aspx','_blank')" />
+		<a id="url_lotto" href="https://www.taiwanlottery.com.tw/lotto649/index.asp" target="_blank">éŠæˆ²è¦å‰‡</a>
 
-		<h2>·Ç³Æ¦n¤F¶Ü ?</h2>
+		<h2>æº–å‚™å¥½äº†å— ?</h2>
 		
-	<button class="lucky" onmousedown="luckyDow()" onmouseup="luckyUp()">¹q¸£¿ï¸¹</button>
-<!-- 	<button class="lucky">¹q¸£¿ï¸¹</button> -->
+	<button class="lucky" onmousedown="luckyDow()" onmouseup="luckyUp()">é›»è…¦é¸è™Ÿ</button>
+<!-- 	<button class="lucky">é›»è…¦é¸è™Ÿ</button> -->
 	
-	<button id="pred_btn">©¯¹BÂà³J</button>
+	<button id="pred_btn">å¹¸é‹è½‰è›‹</button>
 	
-	<p class="up">¯¬±z¦n¹B</p>
+	<p class="up">ç¥æ‚¨å¥½é‹</p>
 		<form id="formNum_main">
-				<select class="selectYear" id="year" name="year"></select>¦~¥÷
+				<select class="selectYear" id="year" name="year"></select>å¹´ä»½
 				<br><br>
 				<select onchange="handler_form(this)" name="n1" class="selectNum1"> </select>
 				<select onchange="handler_form(this)" name="n2" class="selectNum2"> </select>
@@ -95,17 +95,17 @@ margin: 5px;
 				<select onchange="handler_form(this)" name="n4" class="selectNum4"> </select>
 				<select onchange="handler_form(this)" name="n5" class="selectNum5"> </select>
 				<select onchange="handler_form(this)" name="n6" class="selectNum6"> </select>
-				 ¼ú¸¹
+				 çè™Ÿ
 				<br><br>
-				<!-- ¶}¼úÄæ¦ì -->
+				<!-- é–‹çæ¬„ä½ -->
 				<select onchange="handler_option(this)" name="random_seed" class="random_seed"> </select>
-				<!-- °e¥X¸ê®Æ -->
-				<input class="btn" id="submit_btn" onclick="submitLotto()" name="submit" type="button" value="¶}¼ú">
+				<!-- é€å‡ºè³‡æ–™ -->
+				<input class="btn" id="submit_btn" onclick="submitLotto()" name="submit" type="button" value="é–‹ç">
 		</form>
 		<br>
-		<!-- ¹w´ú½X¥\¯à: µL­­´Á©µ´Á -->
-		<button name="predict_Num" class="predict_Num">±MÄİ¹w´ú¸¹½X!</button>
-		<button name="predict_Go" class="predict_Go">¶K¤W</button>
+		<!-- é æ¸¬ç¢¼åŠŸèƒ½: ç„¡é™æœŸå»¶æœŸ -->
+		<button name="predict_Num" class="predict_Num">å°ˆå±¬é æ¸¬è™Ÿç¢¼!</button>
+		<button name="predict_Go" class="predict_Go">è²¼ä¸Š</button>
 
 		<div class="ansText"></div>
 		<% Object QQ = session.getAttribute("QQ"); %>
@@ -130,10 +130,10 @@ margin: 5px;
 	
 	let selectYear = document.querySelector('.selectYear')
 	
-	year = Math.round(Math.random()*5)+2014 //ÀH¾÷¦~¥÷
+	year = Math.round(Math.random()*5)+2014 //éš¨æ©Ÿå¹´ä»½
 	console.log(year)
 	for(i=2014; i<=2019; i++){
-			 if(i==year){ //¹w³]¦~¥÷
+			 if(i==year){ //é è¨­å¹´ä»½
 			 	selectYear.innerHTML += "<option selected>"+ i +"</option>"
 			 }else{
 				 selectYear.innerHTML += "<option>"+ i +"</option>"
@@ -149,7 +149,7 @@ margin: 5px;
 	let viewAjax = document.querySelector('#viewAjax')
 	let other = document.querySelector('.other')
 	
-	// ¹w´ú½X¥\¯à(§ó·s¤¤) todo.. ======================================================
+	// é æ¸¬ç¢¼åŠŸèƒ½(æ›´æ–°ä¸­) todo.. ======================================================
 	
 	let lucky = document.querySelector('.lucky')
 	let predict_Num = document.querySelector('.predict_Num')
@@ -157,7 +157,7 @@ margin: 5px;
 	let up = document.querySelector('.up')
 	let count = 0
 	
-	// ¨ú10´Á¼ú¸¹§@¤ñ¹ï¼Ë¥»
+	// å–10æœŸçè™Ÿä½œæ¯”å°æ¨£æœ¬
 	let ans1 = ["19","45","44","9","6","40","1"]
 	let ans2 = ["31","1","11","33","5","19","6"]
 	let ans3 = ["45","19","18","16","33","17","25"]
@@ -170,40 +170,40 @@ margin: 5px;
 	let ans10 = ["46","4","44","34","22","17","13"]
 	let ansAll = [ans1,ans2,ans3,ans4,ans5,ans6,ans7,ans8,ans9,ans10]
 	
-	// ¥»¦a - ¶}¼ú¸¹½X
+	// æœ¬åœ° - é–‹çè™Ÿç¢¼
 	s = Math.round(Math.random()*9)+1
 	ansLotto = ansAll[s]
-	ansLotto.pop() // ²¾°£¯S§O¸¹
+	ansLotto.pop() // ç§»é™¤ç‰¹åˆ¥è™Ÿ
 	
-	ansLotto = ansAll["46","4","44","34","22","17"] //´ú¸Õ¥Î
+	ansLotto = ansAll["46","4","44","34","22","17"] //æ¸¬è©¦ç”¨
 
-	// ¹w´ú¸¹½X
+	// é æ¸¬è™Ÿç¢¼
 	push_bool = false
 	predict_Num.onclick = function(){
-// 		lucky.onclick() //¯S®í¥\¯à¡A¤j¶q§ëª`°ïÅ|¥X³Ì¦h¤¤¼úªº¼ú¸¹
+// 		lucky.onclick() //ç‰¹æ®ŠåŠŸèƒ½ï¼Œå¤§é‡æŠ•æ³¨å †ç–Šå‡ºæœ€å¤šä¸­ççš„çè™Ÿ
 		count += 1
-		if(push_bool == true){ //·í¹w´ú½X ¥X²{®É..
-			if(confirm("¶K¤W ¹w´ú½X")){ //¸ß°İ¬O§_­n¶K¤W
-				predict_Go.onclick() //¶K¤W
-				this.innerHTML=(this.innerHTML=="ÂW§ÚÂW§Ú!"?"ÂWÃa¤F":"ÂW§ÚÂW§Ú!") //§¹¦¨¨ÃÃö³¬¹w´ú½XÅã¥Ü
-			}else{ //¨ú®ø§YÃö³¬¸¹½XÅã¥Ü
-				this.innerHTML=(this.innerHTML=="ÂW§ÚÂW§Ú!"?"ÂWÃa¤F":"ÂW§ÚÂW§Ú!") //§¹¦¨¨ÃÃö³¬¹w´ú½XÅã¥Ü
+		if(push_bool == true){ //ç•¶é æ¸¬ç¢¼ å‡ºç¾æ™‚..
+			if(confirm("è²¼ä¸Š é æ¸¬ç¢¼")){ //è©¢å•æ˜¯å¦è¦è²¼ä¸Š
+				predict_Go.onclick() //è²¼ä¸Š
+				this.innerHTML=(this.innerHTML=="æˆ³æˆ‘æˆ³æˆ‘!"?"æˆ³å£äº†":"æˆ³æˆ‘æˆ³æˆ‘!") //å®Œæˆä¸¦é—œé–‰é æ¸¬ç¢¼é¡¯ç¤º
+			}else{ //å–æ¶ˆå³é—œé–‰è™Ÿç¢¼é¡¯ç¤º
+				this.innerHTML=(this.innerHTML=="æˆ³æˆ‘æˆ³æˆ‘!"?"æˆ³å£äº†":"æˆ³æˆ‘æˆ³æˆ‘!") //å®Œæˆä¸¦é—œé–‰é æ¸¬ç¢¼é¡¯ç¤º
 				}
 		}else{
-			this.innerHTML=(this.innerHTML=="ÂW§ÚÂW§Ú!"?"ÂWÃa¤F":"ÂW§ÚÂW§Ú!")		
+			this.innerHTML=(this.innerHTML=="æˆ³æˆ‘æˆ³æˆ‘!"?"æˆ³å£äº†":"æˆ³æˆ‘æˆ³æˆ‘!")		
 		}
 		
-		if(count%5==0){ // ·í²Å¦XN¦¸ÂIÀ» ³ê¿ô¹w´ú½X®É..
-			predict_Go.style.display = "inline" //¶K¤W«ö¶s Åã¥Ü
-// 			this.innerHTML = ansLotto //Åã¥Ü¸¹½X
-			this.innerHTML = bigLotto //Àò¼ú³Ì¦h¸¹½X
-			push_bool = true //¤ñ¹ïªù²¼
+		if(count%5==0){ // ç•¶ç¬¦åˆNæ¬¡é»æ“Š å–šé†’é æ¸¬ç¢¼æ™‚..
+			predict_Go.style.display = "inline" //è²¼ä¸ŠæŒ‰éˆ• é¡¯ç¤º
+// 			this.innerHTML = ansLotto //é¡¯ç¤ºè™Ÿç¢¼
+			this.innerHTML = bigLotto //ç²çæœ€å¤šè™Ÿç¢¼
+			push_bool = true //æ¯”å°é–€ç¥¨
 		}else{
-			predict_Go.style.display = "none" //¶K¤W«ö¶s ¤£Åã¥Ü
+			predict_Go.style.display = "none" //è²¼ä¸ŠæŒ‰éˆ• ä¸é¡¯ç¤º
 			push_bool = false
 		}
 	}
-	// ±N¹w´ú¸¹½X ³]©w¬° ¶}¼ú¸¹½X
+	// å°‡é æ¸¬è™Ÿç¢¼ è¨­å®šç‚º é–‹çè™Ÿç¢¼
 	predict_Go.onclick = function(){
 		random_seed.innerHTML += '<option selected>'+ bigLotto +'</option>'
 		arFun(bigLotto)
@@ -214,36 +214,38 @@ margin: 5px;
 	let big_win = [];
 	let bigWin_old = 0
 	function lottoAjax(checkNum){
-		$('#viewAjax').text("§ëª`¼ú¸¹¡G" + checkNum)
-		//viewAjax.innerHTML += "<br>"
-		console.log($('#formNum_main').serialize());
+		$('#viewAjax').text("æŠ•æ³¨çè™Ÿï¼š" + checkNum)
+// 		console.log($('#formNum_main').serialize()); //é€åˆ°å¾Œç«¯çš„è¡¨å–®è³‡æ–™
 		$.ajax({
 			type:"post",
 			url:"lottoAction",
 			data:$('#formNum_main').serialize(),
-			datatype:"json",
+			datatype:"text",
 			success:function(message){
-				jsonObj = JSON.parse(message) //¸ÑªR¦^JSON®æ¦¡
+// 				console.log(JSON.stringify(message.lotto)) //å¾Œç«¯ç™¼å›ä¾†çš„å…¨éƒ¨è³‡æ–™
+				jsonStr = JSON.stringify(message.lotto)
+				console.log(jsonStr)
+				jsonObj = JSON.parse(jsonStr) //è§£æå›JSONæ ¼å¼
 				current_win = jsonL(jsonObj)
-				$('#viewAjax').append("<br>¤¤¼úÁ`¼Æ¡G"+ current_win +"<br>")
+				$('#viewAjax').append("<br>ä¸­çç¸½æ•¸ï¼š"+ current_win +"<br>")
 				if(current_win > bigWin_old){
 					bigWin_old = current_win
 					bigLotto = checkNum
-					$('.other2').text(bigLotto) //¨ú¥X³Ì®e©ö¤¤¼úªº¼ú¸¹
+					$('.other2').text(bigLotto) //å–å‡ºæœ€å®¹æ˜“ä¸­ççš„çè™Ÿ
 				}
 			}
 		}) 
 	}
 	
 // ===========================================================================================================================
-		// JSON¤º®e¿é¥X
+		// JSONå…§å®¹è¼¸å‡º
 	function jsonL(jsonEl){
-		$('.other').text("")//²MªÅ¤º®e
-		jsonLength = 0 //­pºâªø«×¡A·N¦®¡G¤¤¼úÁ`¼Æ
+		$('.other').text("")//æ¸…ç©ºå…§å®¹
+		jsonLength = 0 //è¨ˆç®—é•·åº¦ï¼Œæ„æ—¨ï¼šä¸­çç¸½æ•¸
 		for(i in jsonEl){
-			jsonLength++ //¼ú¼Æªø«×++
-			$('#viewAjax').append("<br>"+ jsonEl[i])//Åã¥Ü¨C²Õªº¤¤¼ú¸¹½X * ¤w²¾°£ [ ] ¥~®Ø
-			tem_el = jsonEl[i].split(',') // ²¾°£ " , " ³r¸¹¡A¯Â¼Æ­ÈÅã¥Ü
+			jsonLength++ //çæ•¸é•·åº¦++
+			$('#viewAjax').append("<br>"+ jsonEl[i])//é¡¯ç¤ºæ¯çµ„çš„ä¸­çè™Ÿç¢¼ * å·²ç§»é™¤ [ ] å¤–æ¡†
+			tem_el = jsonEl[i].split(',') // ç§»é™¤ " , " é€—è™Ÿï¼Œç´”æ•¸å€¼é¡¯ç¤º
 			count = 0
 			red = false
 			
@@ -263,66 +265,66 @@ margin: 5px;
 			}
 			
 			if(count==3){
-			$('.other').append("<br>´¶¼ú¡I "+ count +" ­Ó²Å¦X¼ú¸¹ <br><br> ")
+			$('.other').append("<br>æ™®çï¼ "+ count +" å€‹ç¬¦åˆçè™Ÿ <br><br> ")
 			}else if(count==4){
-			$('.other').append("<br><spen style='color:#ff4444;font-size:40px';>®¥³ß¤T¼ú¡I</spen>"+ count +" ­Ó²Å¦X¼ú¸¹ <br><br> ")				
+			$('.other').append("<br><spen style='color:#ff4444;font-size:40px';>æ­å–œä¸‰çï¼</spen>"+ count +" å€‹ç¬¦åˆçè™Ÿ <br><br> ")				
 			}else if(count==5){
-			$('.other').append("<br><spen style='color:#ff2222;font-size:50px';>®¥³ß¤G¼ú¡I</spen>"+ count +" ­Ó²Å¦X¼ú¸¹ <br><br> ")								
+			$('.other').append("<br><spen style='color:#ff2222;font-size:50px';>æ­å–œäºŒçï¼</spen>"+ count +" å€‹ç¬¦åˆçè™Ÿ <br><br> ")								
 			}else if(count==6){
-			$('.other').append("<br><spen style='color:#ffffff;font-size:60px';>µo¤j°] ¤¤ÀY¼ú¡I¡I¡I</spen>"+ count +" ­Ó²Å¦X¼ú¸¹ <br><br> ")								
+			$('.other').append("<br><spen style='color:#ffffff;font-size:60px';>ç™¼å¤§è²¡ ä¸­é ­çï¼ï¼ï¼</spen>"+ count +" å€‹ç¬¦åˆçè™Ÿ <br><br> ")								
 			}else{
-			$('.other').append("<br>¥i±¤¡I¨S¦³¤¤¼ú¡A¤U¥h»â500<br><br> ")				
+			$('.other').append("<br>å¯æƒœï¼æ²’æœ‰ä¸­çï¼Œä¸‹å»é ˜500<br><br> ")				
 			}
 			
-		}//¥H¤W°j°é¤w¿é¥X¤º®e
-		return jsonLength //¥uªğ¦^Á`¼Æ§Y¥i
+		}//ä»¥ä¸Šè¿´åœˆå·²è¼¸å‡ºå…§å®¹
+		return jsonLength //åªè¿”å›ç¸½æ•¸å³å¯
 	}
 // ===========================================================================================================================
-	// ¶}¼ú«ö¶s: ÀË´ú­«½Æ¸¹½X
+	// é–‹çæŒ‰éˆ•: æª¢æ¸¬é‡è¤‡è™Ÿç¢¼
 	function submitLotto(){
-		c = currentNum() // ¨ú±o·í«e­È(³q¥Î¨ç¦¡)
+		c = currentNum() // å–å¾—ç•¶å‰å€¼(é€šç”¨å‡½å¼)
 		checkNum = c.toString().split(',')
-		ticket = true // ¹ï¼úªù²¼
+		ticket = true // å°çé–€ç¥¨
 		for(i=0; i<6; i++){
 			for(j=0; j<i; j++){
 				if(checkNum[i]==checkNum[j]){
-					wen.innerHTML = "¸¹½X­«½Æ¡A½Ğ­«·s³]©w"
-					other.innerHTML += "<br>" + "½ĞÀË¬d­«½Æ­È " +"<span style='color:#ff2244'>"+ checkNum[i] +"</span>" + "<br>"
-					ticket = false // ¦³­«½Æ­È´N¨S¦¬ªù²¼
-					break // ²×¤î¹ï¼ú
+					wen.innerHTML = "è™Ÿç¢¼é‡è¤‡ï¼Œè«‹é‡æ–°è¨­å®š"
+					other.innerHTML += "<br>" + "è«‹æª¢æŸ¥é‡è¤‡å€¼ " +"<span style='color:#ff2244'>"+ checkNum[i] +"</span>" + "<br>"
+					ticket = false // æœ‰é‡è¤‡å€¼å°±æ²’æ”¶é–€ç¥¨
+					break // çµ‚æ­¢å°ç
 				}
 			}
 		}
 
-		if(ticket){ // ªù²¼¬° true §Y²Å¦X¹ï¼ú¸ê®æ
-			wen.innerHTML = "¸g¶O¤£¨¬¡AµL­­´Á½Ğ¨Dª÷´©"
-			lottoAns(checkNum) // ©I¥s¥»¦a¹ï¼ú¨ç¦¡
-			lottoAjax(checkNum) // Ajax¸ê®Æ®w¹ï¼ú
+		if(ticket){ // é–€ç¥¨ç‚º true å³ç¬¦åˆå°çè³‡æ ¼
+			wen.innerHTML = "ç¶“è²»ä¸è¶³ï¼Œç„¡é™æœŸè«‹æ±‚é‡‘æ´"
+			lottoAns(checkNum) // å‘¼å«æœ¬åœ°å°çå‡½å¼
+			lottoAjax(checkNum) // Ajaxè³‡æ–™åº«å°ç
 		}
 
 	}
 
-	// ¥»¦a¨ú¼Ëªº¹ï¼ú¨ç¦¡: 	
+	// æœ¬åœ°å–æ¨£çš„å°çå‡½å¼: 	
 	function lottoAns(checkNum){
-		ansCurrent = ansAll[s] // §¹¾ã¼ú¸¹
+		ansCurrent = ansAll[s] // å®Œæ•´çè™Ÿ
 		let checkCount = 0
 		for(i=0; i<7; i++){
 			for(j=0; j<6; j++){
 				if(checkNum[j]==ansCurrent[i]){
 					checkCount+=1
-					//other.innerHTML += checkNum[j] + " ¸¹½X²Å¦X! ¥Ø«e²Ö¿n " + checkCount + " ­Ó¸¹½X¼ú¸¹" + "<br>"
+					//other.innerHTML += checkNum[j] + " è™Ÿç¢¼ç¬¦åˆ! ç›®å‰ç´¯ç© " + checkCount + " å€‹è™Ÿç¢¼çè™Ÿ" + "<br>"
 				}
 			}
 		}
 		if(checkCount>=3){
-			//other.innerHTML += "®¥³ß¤¤¼ú!¥»²Õ[ " + checkNum + " ]¼ú¸¹¦@²Å¦X" + checkCount + "­Ó¸¹½X" + "<br><br>"
+			//other.innerHTML += "æ­å–œä¸­ç!æœ¬çµ„[ " + checkNum + " ]çè™Ÿå…±ç¬¦åˆ" + checkCount + "å€‹è™Ÿç¢¼" + "<br><br>"
 		}else{
-			//other.innerHTML += "¥i±¤¡I¨S¦³¤¤¼ú¡A¤U¥h»â500" + "<br>"
+			//other.innerHTML += "å¯æƒœï¼æ²’æœ‰ä¸­çï¼Œä¸‹å»é ˜500" + "<br>"
 		}
 
 	}
 
-	// ¨ú±o·í«e­È(³q¥Î¨ç¦¡)
+	// å–å¾—ç•¶å‰å€¼(é€šç”¨å‡½å¼)
 	function currentNum(){
 		let lst = []
 		lst += formNum_main.n1.value +","+ formNum_main.n2.value +","+
@@ -331,41 +333,41 @@ margin: 5px;
 		return lst
 	}
 	
-	// Åã¥Ü«ö¶s(ÀH¾÷¿ï¸¹¥\¯à)
+	// é¡¯ç¤ºæŒ‰éˆ•(éš¨æ©Ÿé¸è™ŸåŠŸèƒ½)
 	lucky.onclick = function(){
 //		pred_btn.style.display = "inline"
 //		lucky.style.display = "none"
-		up.innerHTML = "µo¤j°]¡I"
-	// ¹q¸£¿ï¸¹ ª½±µ°e¥X¤ñ¹ï
-		ar = [] //²MªÅ
-		roll() //¨ú±o·sªºar¼Æ­È
+		up.innerHTML = "ç™¼å¤§è²¡ï¼"
+	// é›»è…¦é¸è™Ÿ ç›´æ¥é€å‡ºæ¯”å°
+		ar = [] //æ¸…ç©º
+		roll() //å–å¾—æ–°çš„aræ•¸å€¼
 		random_seed.innerHTML += '<option selected>'+ ar +'</option>'
-		arFun(ar) //³]©w³æ¿ï®Ø
-		submitLotto() //¶}¼ú°e¥X
+		arFun(ar) //è¨­å®šå–®é¸æ¡†
+		submitLotto() //é–‹çé€å‡º
 	}
 //=====================================================================================
-	function timeNow(){ //Àò¨ú¦¹¨è®É¶¡
+	function timeNow(){ //ç²å–æ­¤åˆ»æ™‚é–“
         now = new Date()
         return now.getTime()}
-	//ªø«ö
+	//é•·æŒ‰
 	   function luckyDow()
       {
-          startTime = timeNow()//·Æ¹««ö¤U®É¶¡
-       	Time = setInterval(function(){ //¨C100²@¬í°õ¦æ¤@¦¸
-          endTime = timeNow()//©Ò¥H¨C100²@¬í§ì¨ú¤@¦¸®É¶¡
+          startTime = timeNow()//æ»‘é¼ æŒ‰ä¸‹æ™‚é–“
+       	Time = setInterval(function(){ //æ¯100æ¯«ç§’åŸ·è¡Œä¸€æ¬¡
+          endTime = timeNow()//æ‰€ä»¥æ¯100æ¯«ç§’æŠ“å–ä¸€æ¬¡æ™‚é–“
 
-          if(endTime-startTime>1000)//¦¹¨è®É¶¡»P«ö¤U®É¶¡®t¦³1000²@¬íÄ²µo
+          if(endTime-startTime>1000)//æ­¤åˆ»æ™‚é–“èˆ‡æŒ‰ä¸‹æ™‚é–“å·®æœ‰1000æ¯«ç§’è§¸ç™¼
           {
         	  lucky.onclick()
           }
-        },50)//³]©w¨C * ²@¬í
+        },50)//è¨­å®šæ¯ * æ¯«ç§’
       }
-     //ªø«öµ²§ô
+     //é•·æŒ‰çµæŸ
      function luckyUp(){
      	clearInterval(Time)
      }
 //=====================================================================================
-	// ¶Ã¼Æ¤£­«½Æ(³q¥Î¨ç¦¡)
+	// äº‚æ•¸ä¸é‡è¤‡(é€šç”¨å‡½å¼)
 	let ar = []
 	function roll(){
 		for(i=0; i<6; i++){
@@ -380,12 +382,12 @@ margin: 5px;
 			}
 		}
 	}
-	// ¹CÀ¸¶}©l Load
-	roll() // ¥ı¨ú±o¤@²Õ¶Ã¼Æ
-	constructor() // «Øºc¤»²Õ³æ¿ïÄæ¦ì
-	random_seed.innerHTML += '<option selected>'+ ar +'</option>' // ²Ä¤@¦¸¨ú±oªº¶Ã¼Æ ·í§@¹w³]¸¹½X
+	// éŠæˆ²é–‹å§‹ Load
+	roll() // å…ˆå–å¾—ä¸€çµ„äº‚æ•¸
+	constructor() // å»ºæ§‹å…­çµ„å–®é¸æ¬„ä½
+	random_seed.innerHTML += '<option selected>'+ ar +'</option>' // ç¬¬ä¸€æ¬¡å–å¾—çš„äº‚æ•¸ ç•¶ä½œé è¨­è™Ÿç¢¼
 	
-	// ©¯¹BÂà³J:¶Ã¼Æ²£¥Í¼Ö³z¸¹½X(¤£­«½Æ)
+	// å¹¸é‹è½‰è›‹:äº‚æ•¸ç”¢ç”Ÿæ¨‚é€è™Ÿç¢¼(ä¸é‡è¤‡)
 	pred_btn.onclick = function(){
 		ar = []
 		roll()
@@ -393,8 +395,8 @@ margin: 5px;
 		arFun(ar)
 	}
 	// ================================================================================	
-	 // ¨Æ¥ó: javaÀô¹Òªº js³]©w ºÃ¦ü¤£¤¹³\§Y®É§ó·s¿ï®Ø­È¡A¬G¨Ï¥Î­«¼g¤è¦¡§@³]­p¥\¯à
-	 function roll_col(arc,v){ // ( ³Q­×§ï , ±ı­×§ï )
+	 // äº‹ä»¶: javaç’°å¢ƒçš„ jsè¨­å®š ç–‘ä¼¼ä¸å…è¨±å³æ™‚æ›´æ–°é¸æ¡†å€¼ï¼Œæ•…ä½¿ç”¨é‡å¯«æ–¹å¼ä½œè¨­è¨ˆåŠŸèƒ½
+	 function roll_col(arc,v){ // ( è¢«ä¿®æ”¹ , æ¬²ä¿®æ”¹ )
 		 arc.innerHTML = ''
 		 for(i=1; i<50; i++){
 		    	//if(i<10){i = "0"+i}
@@ -402,7 +404,7 @@ margin: 5px;
 		    		}else{arc.innerHTML += "<option>"+i+"</option>"}
 		    	}
 	 }
-	// ¨Ò¥~: ­ì¥ı¥Î¸Ó­È§@­×§ï§Y¥i¡A¦]¤W­z¨Ò¥~¨Ï¥Î­«¼gªº¤è¦¡
+	// ä¾‹å¤–: åŸå…ˆç”¨è©²å€¼ä½œä¿®æ”¹å³å¯ï¼Œå› ä¸Šè¿°ä¾‹å¤–ä½¿ç”¨é‡å¯«çš„æ–¹å¼
 	function arFun(ar){
 		roll_col(selectNum1,ar[0])
 		roll_col(selectNum2,ar[1])
@@ -413,26 +415,26 @@ margin: 5px;
 	}
 	// ================================================================================
 
-	// ³æ¤@¿ï®Ø: ±N·í«e­È(¤U¿ï³æ) §ó·s¬° ¶}¼ú¸¹½X
+	// å–®ä¸€é¸æ¡†: å°‡ç•¶å‰å€¼(ä¸‹é¸å–®) æ›´æ–°ç‚º é–‹çè™Ÿç¢¼
 	function handler_form(fs){
-		let lst = [] // ªÅ°}¦C
-		let arf = fs.options[fs.selectedIndex].innerText // ¨ú±o³æ­Ó(¤U¿ï³æ)­×§ï¹Lªº­È
-		this.value = arf // fs¬°¸Ó optionÄæ¦ì(¤U¿ï³æ)¡A±N¨ä­È´À´«¬° ­×§ï¹Lªº­È
+		let lst = [] // ç©ºé™£åˆ—
+		let arf = fs.options[fs.selectedIndex].innerText // å–å¾—å–®å€‹(ä¸‹é¸å–®)ä¿®æ”¹éçš„å€¼
+		this.value = arf // fsç‚ºè©² optionæ¬„ä½(ä¸‹é¸å–®)ï¼Œå°‡å…¶å€¼æ›¿æ›ç‚º ä¿®æ”¹éçš„å€¼
 
-		// ¤W­z­×§ï§¹¦¨¡A¶i¦æ ¨ú±o·í«e­È(³q¥Î¨ç¦¡)
+		// ä¸Šè¿°ä¿®æ”¹å®Œæˆï¼Œé€²è¡Œ å–å¾—ç•¶å‰å€¼(é€šç”¨å‡½å¼)
 		n = currentNum()
-		// ¥H·í«e­È n «Ø¥ß¶}¼ú¸¹½XÄæ¦ì
+		// ä»¥ç•¶å‰å€¼ n å»ºç«‹é–‹çè™Ÿç¢¼æ¬„ä½
 		random_seed.innerHTML += '<option selected>'+ n +'</option>'
 	}
 	
-	// ¶}¼ú¸¹½XÄæ¦ì: ¬ö¿ı¨C²Õ¸¹½X¨Ã±N¿ï¨úªº²Õ¦X ³]©w¬° ·í«e­È(¤U¿ï³æ)
+	// é–‹çè™Ÿç¢¼æ¬„ä½: ç´€éŒ„æ¯çµ„è™Ÿç¢¼ä¸¦å°‡é¸å–çš„çµ„åˆ è¨­å®šç‚º ç•¶å‰å€¼(ä¸‹é¸å–®)
 	function handler_option(ar){
 		let ars = ar.options[ar.selectedIndex].innerText;
 		ars = ars.split(',')
 		arFun(ars)
 	}
 
-	// «Øºc:«Ø¥ß 6²Õ¤U¿ï³æÄæ¦ì(49­Ó¸¹½X)
+	// å»ºæ§‹:å»ºç«‹ 6çµ„ä¸‹é¸å–®æ¬„ä½(49å€‹è™Ÿç¢¼)
 	function constructor(){
 		for(var i=1; i<=49; i++){
 			//if(i<10){i = "0"+i}

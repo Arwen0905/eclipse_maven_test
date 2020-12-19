@@ -12,28 +12,36 @@
 		<p><a href="<s:url action='hello'/>">Hello World</a></p>
         <p><a href="<s:url action='welcome_register'/>">Welcome Register</a></p>
         <p><a href="<s:url action='welcome_lotto'/>">Welcome Lotto</a></p>
+<%--         <p><a href="<s:url action='welcome_JSONExample'/>">Welcome JSONExample</a></p> --%>
        	<h2 class="other">prefix</h2>
         <s:action name="welcome_selector" executeResult="true"/>
-        
-<%--         <s:action name="welcome_register" executeResult="true"/> --%>
-
+<!-- 		jsonObj:{ -->
+<!-- 			"newName":"custom", -->
+<!-- 			"field1":"str", -->
+<!-- 			"ints":[10,20], -->
+<!-- 			"map":{"John":"Galt"} -->
+<!-- 		} -->
 		<script type="text/javascript">
-// 		$(document).ready(function(){
-// 			$.ajax({
-// 				type:"post",
-// 				url:"register",
-// 				data:"",
-// 				dataType:"json",
-// 				success:function(message){
-// 					$('.other').text("message:"+message)
-// 					jsonObj = JSON.parse(message)
-// 					$('.other').text("jsonObj:"+jsonObj)
-// 				},
-// 				error:function(){
-// 					alert("Ajax出現異常")
-// 				}
-// 			})
-// 		})
+		$(document).ready(function(){
+			$.ajax({
+				type:"post",
+				url:"JSONExample",
+				data:"",
+				dataType:"json",
+				success:function(message){
+					json = JSON.stringify(message)
+					console.log("jsonObj:"+json)
+					jsonObj = JSON.parse(json)
+					console.log("jsonObj:"+jsonObj.field1)
+					for(i in jsonObj){
+						console.log(jsonObj[i]+"<<<")
+					}
+				},
+				error:function(){
+					alert("Ajax出現異常")
+				}
+			})
+		})
 		</script>
     </body>
 </html>

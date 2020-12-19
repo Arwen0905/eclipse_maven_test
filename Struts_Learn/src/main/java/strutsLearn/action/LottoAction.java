@@ -2,17 +2,14 @@ package strutsLearn.action;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeMap;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
-
-import strutsLearn.model.LottoBean;
 import strutsLearn.service.LottoService;
 
-public class LottoAction extends ActionSupport implements ModelDriven{
+public class LottoAction extends ActionSupport{
 	
 	private LottoService lotService = new LottoService();
-	private LottoBean lottoBean = new LottoBean();
 
 	private String n1;
 	private String n2;
@@ -21,8 +18,10 @@ public class LottoAction extends ActionSupport implements ModelDriven{
 	private String n5;
 	private String n6;
 	private String year;
-	List<String> userLotto = new ArrayList<String>(); 
+	private TreeMap<String,String> lotto = new TreeMap<>();
 	
+	List<String> userLotto = new ArrayList<String>(); 
+
 	public String lotto() {
 		userLotto.add(n1);
 		userLotto.add(n2);
@@ -38,11 +37,19 @@ public class LottoAction extends ActionSupport implements ModelDriven{
 			comma = ",";
 		}
 		System.out.println("\n取得年份：" + year);
-		lotService.detect(userLotto, year);
+		setLotto(lotService.detect(userLotto, year));
 		return SUCCESS;
 	}
 	
 	
+	/**傳回JSP的資料**/
+	public TreeMap<String, String> getLotto() {
+		return lotto;
+	}
+	public void setLotto(TreeMap<String, String> lotto) {
+		this.lotto = lotto;
+	}
+
 	/** Access DataBase **/
 	public LottoService getLotService() {
 		return lotService;
@@ -50,15 +57,8 @@ public class LottoAction extends ActionSupport implements ModelDriven{
 	public void setLotService(LottoService lotService) {
 		this.lotService = lotService;
 	}
-
-	/** getter & setter **/
-	public LottoBean getLottoBean() {
-		return lottoBean;
-	}
-	public void setLottoBean(LottoBean lottoBean) {
-		this.lottoBean = lottoBean;
-	}
 	
+	/** getter & setter **/
 	public String getYear() {
 		return year;
 	}
@@ -102,8 +102,8 @@ public class LottoAction extends ActionSupport implements ModelDriven{
 		this.n6 = n6;
 	}
 	
-	@Override
-	public Object getModel() {
-		return lottoBean;
-	}
+//	@Override
+//	public Object getModel() {
+//		return lottoBean;
+//	}
 }

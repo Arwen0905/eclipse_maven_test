@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Dec 19 20:25:50 CST 2020
+json-parser_2.11-2.0.2-sources.jar>central=
+json-parser_2.11-2.0.2.jar>central=
+json-parser_2.11-2.0.2.pom>central=
