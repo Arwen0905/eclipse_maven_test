@@ -222,11 +222,13 @@ margin: 5px;
 			data:$('#formNum_main').serialize(),
 			datatype:"text",
 			success:function(message){
-// 				console.log(JSON.stringify(message.lotto)) //後端發回來的全部資料
-				jsonStr = JSON.stringify(message.lotto)
-				console.log(jsonStr)
-				jsonObj = JSON.parse(jsonStr) //解析回JSON格式
-				current_win = jsonL(jsonObj)
+// 				console.log(JSON.stringify(message.lotto)) //後端發回來的全部資料(取出lotto)
+// 				console.log(Object.keys(message.lotto) + " <<lotto所有的key值")
+				jsonStr = JSON.stringify(message.lotto) //運用json方法將lotto(集合)轉成json字串
+				console.log(jsonStr + " <<取出lotto(集合)並轉成字串")
+				jsonObj = JSON.parse(jsonStr) //再將轉型後的字串，解析為JSON格式(鍵值對)
+// 				console.log(jsonObj + " <<解析為JSON字串了")
+				current_win = jsonL(jsonObj) //使用迭代方法
 				$('#viewAjax').append("<br>中獎總數："+ current_win +"<br>")
 				if(current_win > bigWin_old){
 					bigWin_old = current_win

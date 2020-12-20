@@ -14,6 +14,8 @@
         <p><a href="<s:url action='welcome_lotto'/>">Welcome Lotto</a></p>
 <%--         <p><a href="<s:url action='welcome_JSONExample'/>">Welcome JSONExample</a></p> --%>
        	<h2 class="other">prefix</h2>
+       	<h2 class="other1"></h2>
+       	<h2 class="other2"></h2>
         <s:action name="welcome_selector" executeResult="true"/>
 <!-- 		jsonObj:{ -->
 <!-- 			"newName":"custom", -->
@@ -21,7 +23,24 @@
 <!-- 			"ints":[10,20], -->
 <!-- 			"map":{"John":"Galt"} -->
 <!-- 		} -->
+
 		<script type="text/javascript">
+		JSON.parse('{"p": 5}', function(k, v) {
+			  if (typeof v === 'number') {
+// 				  console.log(v * 2) //10
+			    return v * 2;  // return v * 2 for numbers
+			  }
+// 			  $('.other1').append(Object.keys(v)+" << ")
+// 			  $('.other1').append(v.p+" << ")
+			  return v;        // return everything else unchanged
+			});
+		
+		JSON.parse('{"1": 1, "2": 2, "3": {"4": 4, "5": {"6": 6}}}', function(k, v) {
+			  console.log(k + "鍵" + v +":"+ Object.keys(v) + "值"); // log the current property name, the last is "".
+// 			  $('.other2').append(k+"，")
+			  return v;       // return the unchanged property value.
+			});
+		
 		$(document).ready(function(){
 			$.ajax({
 				type:"post",
@@ -30,11 +49,11 @@
 				dataType:"json",
 				success:function(message){
 					json = JSON.stringify(message)
-					console.log("jsonObj:"+json)
+// 					console.log("jsonObj:"+json)
 					jsonObj = JSON.parse(json)
-					console.log("jsonObj:"+jsonObj.field1)
+// 					console.log("jsonObj:"+jsonObj.field1)
 					for(i in jsonObj){
-						console.log(jsonObj[i]+"<<<")
+// 						console.log(jsonObj[i]+" <<<")
 					}
 				},
 				error:function(){
