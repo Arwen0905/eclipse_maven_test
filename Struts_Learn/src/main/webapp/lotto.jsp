@@ -22,13 +22,13 @@ border: 5px solid #ff2244;
 padding: 20px;
 background: #eee;
 }
-#wen{
+#resetPage{
 height: 40px;
 color: #ff2244;
 font-size: 28px;
 user-select: none;
 }
-#wen:hover{
+#resetPage:hover{
 	color: #ffaacc;
 	transition: 0.5s;
 }
@@ -74,7 +74,7 @@ margin: 5px;
 <body>
 <div id="wrapper">
 	<div class="lotto649">
-		<h1 id="wen" onclick="javascript:window.location.reload()" title="重新整理">Hello World</h1>
+		<h1 id="resetPage" onclick="javascript:window.location.reload()" title="重新整理">Hello World</h1>
 		<input class="btn" value="官方網站" type="button" onclick="window.open('https://www.taiwanlottery.com.tw/lotto/lotto649/history.aspx','_blank')" />
 		<a id="url_lotto" href="https://www.taiwanlottery.com.tw/lotto649/index.asp" target="_blank">遊戲規則</a>
 
@@ -120,7 +120,7 @@ margin: 5px;
 </div>
 
 	<script type="text/javascript">
-	let wen = document.querySelector('#wen')
+	let resetPage = document.querySelector('#resetPage')
 	let selectNum1 = document.querySelector('.selectNum1')
 	let selectNum2 = document.querySelector('.selectNum2')
 	let selectNum3 = document.querySelector('.selectNum3')
@@ -290,7 +290,7 @@ margin: 5px;
 		for(i=0; i<6; i++){
 			for(j=0; j<i; j++){
 				if(checkNum[i]==checkNum[j]){
-					wen.innerHTML = "號碼重複，請重新設定"
+					resetPage.innerHTML = "號碼重複，請重新設定"
 					other.innerHTML += "<br>" + "請檢查重複值 " +"<span style='color:#ff2244'>"+ checkNum[i] +"</span>" + "<br>"
 					ticket = false // 有重複值就沒收門票
 					break // 終止對獎
@@ -299,7 +299,7 @@ margin: 5px;
 		}
 
 		if(ticket){ // 門票為 true 即符合對獎資格
-			wen.innerHTML = "經費不足，無限期請求金援"
+			resetPage.innerHTML = "經費不足，無限期請求金援"
 			lottoAns(checkNum) // 呼叫本地對獎函式
 			lottoAjax(checkNum) // Ajax資料庫對獎
 		}
